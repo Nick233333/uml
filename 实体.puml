@@ -1,0 +1,24 @@
+```plantuml
+@startuml
+!theme superhero-outline
+
+class user <<用户表>> {
+    - id
+    - name
+    - status // 状态
+    - created_at
+    - updated_at
+}
+
+class order <<订单表>> {
+    - id
+    - user_id
+    - status // 状态
+    - created_at
+    - updated_at
+}
+
+user --> order: 1-N
+
+@enduml
+```

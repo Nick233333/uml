@@ -1,0 +1,54 @@
+```plantuml
+    @startuml
+    !theme superhero
+        start
+            partition Controller/search {
+                :请求参数{
+                    "xx":"xx" //备注
+                };
+                :请求头{
+                    "language":"" //语言 （可选）
+                };
+                :验证参数;
+                if(缺少必填参数) then (true)
+                note right: 备注
+                        #pink:抛出异常;
+                        stop
+                    endif
+                partition Service/search {
+                    note left: 备注，**加粗文字**
+                    :搜索并处理逻辑;
+
+                    partition Repository/checkTableExists {
+                        :根据 <u>参数</u> 搜索;
+                    }
+
+                    if(查无数据) then (true)
+                        #pink:抛出异常 错误码;
+                        stop
+                    endif
+
+                    :1;
+                    :2;
+                    :3;
+
+                }
+            }
+        end
+    @enduml
+```
+
+```plantuml
+@startuml
+!theme aws-orange
+    title:标题
+    start
+        if(条件)then(通过)
+            :返回结果;
+        else(不通过)
+            #pink:抛出异常 错误码;
+            stop
+        endif
+    end
+@enduml
+```

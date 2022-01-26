@@ -1,0 +1,38 @@
+@startuml
+!theme superhero-outline
+' + 代表 public
+' - 代表 private
+' # 代表 protected
+interface UserInterface <<interface>> {
+    + user()
+    + status()
+}
+
+class VipUser  {
+    + user()
+    + status()
+    #id()
+}
+
+class GuestUser  {
+    + user()
+    + status()
+    -isDeleted()
+}
+
+UserInterface <|-- VipUser
+UserInterface <|-- GuestUser
+
+
+interface OrderInterface <<interface>> {
+    + user()
+    + status()
+}
+
+class Order  {
+    + detail()
+}
+
+OrderInterface <|-- Order
+
+@enduml

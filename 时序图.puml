@@ -1,0 +1,38 @@
+@startuml
+!theme aws-orange
+autonumber
+alt 标题
+A -> B: 操作a
+B -> C: 操作b
+C -> C: 操作c，中断返回
+C -> D: 操作d，成功往下执行
+B x<- C: 操作e，返回中断结果
+note right: 操作 <u>e</u> 备注
+
+C -> B: 操作f，返回成功结果
+B -> A: 操作g，处理结果
+end
+
+alt 标题
+C -> D: 操作h，发起请求1
+note left: 操作**h**备注
+C -> D: 操作i，发起请求2
+D -> C: 操作j，处理返回结果
+
+end
+
+alt 标题
+A -> B: 操作k，发起请求
+B -> C: 操作l，发送请求
+
+C -> B: 操作m，返回结果
+B -> A: 操作n，处理结果
+end
+@enduml
+
+
+
+
+
+
+
