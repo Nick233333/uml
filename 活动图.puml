@@ -1,6 +1,6 @@
 ```plantuml
     @startuml
-    !theme superhero
+    !theme bluegray
         start
             partition Controller/search {
                 :请求参数{

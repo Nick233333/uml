@@ -1,5 +1,5 @@
 @startuml
-!theme aws-orange
+!theme bluegray
 autonumber
 alt 标题
 A -> B: 操作a
